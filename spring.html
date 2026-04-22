@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>21 Spring Recipes | Society</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="header">
+    <nav class="nav-links" style="display: flex;">
+      <a href="index.html">← Back to Home</a>
+    </nav>
+    <a href="index.html" class="logo">Society</a>
+    <div class="header-actions"></div>
+  </header>
+
+  <section class="editorial-hero">
+    <div class="editorial-hero-content">
+      <span class="editorial-subtitle">Curated Collection</span>
+      <h1 class="editorial-title">21 Favorite Grandmas'<br>Recipes For Spring</h1>
+      <p class="editorial-desc">When the produce is perfect and the days get longer, we turn to these bright, fresh, and vibrant cultural classics. From delicate Vietnamese spring rolls to bright Italian lemon risottos, these are the 21 recipes our society grandmas swear by.</p>
+    </div>
+  </section>
+
+  <section class="editorial-list-container">
+    <div id="grid-spring" class="editorial-list"></div>
+  </section>
+
+  <div id="recipe-modal" class="modal-overlay dark hidden">
+    <div class="recipe-modal-content">
+      <button id="close-recipe-btn" class="close-modal-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+      <div class="recipe-modal-img"><img id="modal-img" src="" alt="Recipe Image" /></div>
+      <div class="recipe-modal-details">
+        <div class="recipe-modal-body">
+          <span id="modal-cuisine" class="badge">Cuisine</span>
+          <h2 id="modal-title" class="recipe-modal-title">Recipe Title</h2>
+          <div class="recipe-meta">
+            <span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              <span id="modal-time">Time</span>
+            </span>
+            <span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+              <span id="modal-author">Grandma</span>
+            </span>
+          </div>
+          <p id="modal-desc" class="recipe-desc"></p>
+          <h3 class="recipe-section-title">Ingredients</h3>
+          <ul id="modal-ingredients" class="recipe-list"></ul>
+          <h3 class="recipe-section-title">Instructions</h3>
+          <ol id="modal-instructions" class="recipe-list ordered"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- title and external fonts -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Society | Cultural Food Recipe Catalog</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  </head>
+<body>
+<!-- header w/ buttons, socials, and search -->
+  <header class="header">
+    <nav class="nav-links">
+      <a href="#recipes">Recipes</a>
+      <a href="#about">About</a>
+      <a href="#cookbook">Cookbook</a>
+      <a href="#newsletter">Newsletter</a>
+    </nav>
+    <div class="logo">Society</div>
+    
+    <div class="header-actions">
+      <a href="#" class="social-icon"><img src="https://img.freepik.com/premium-vector/business-icons-business-ecommerce-finance-accounting-big-set-icons-collection-vector-illustrat_1059745-252.jpg" alt="Instagram" style="transform: scale(1.35);"></a>
+      <a href="#" class="social-icon"><img src="https://thumbs.dreamstime.com/b/print-204672040.jpg" alt="Facebook"></a>
+      <a href="#" class="social-icon"><img src="https://www.logo.wine/a/logo/Snapchat/Snapchat-Ghost-Outlined-Logo.wine.svg" alt="Snapchat" style="transform: scale(1.2);"></a>
+      
+      <button id="open-search-btn" class="search-btn" aria-label="Search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+      </button>
+    </div>
+  </header>
+<!-- about section and photo -->
+  <section class="hero-split">
+    <div class="hero-main">
+      <div class="hero-img-wrapper">
+        <img src="https://images.unsplash.com/photo-1661879425941-ee92d9fe8998?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080" alt="Garlic Butter Shrimp" />
+      </div>
+      <div class="hero-content">
+        <span class="badge">We Love This One</span>
+        <h1 class="hero-title">Garlic Butter Shrimp in White Wine Sauce</h1>
+        <p class="hero-desc">A classic from the society archives. Tender, perfectly seared shrimp bathed in a lemon, garlic, and white wine reduction.</p>
+        <button onclick="openRecipe(111)" class="btn-primary">Go to Recipe</button>
+      </div>
+    </div>
+    
+    <div id="about" class="about-section">
+      <h2 class="about-quote">Cooking is love made visible.</h2>
+      
+      <button onclick="document.getElementById('open-search-btn').click()" class="btn-vault group">
+        <span>Unlock the Recipe Vault</span>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-arrow"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+      </button>
+
+      <div class="about-img-wrapper">
+        <img src="https://images.unsplash.com/photo-1775318254699-b7c4a6ef96a6?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YXNpYW4lMjBncmFuZG1hJTIwY29va2luZ3xlbnwwfHwwfHx8MA%3D%3D" alt="Grandma" />
+      </div>
+      <h2 class="about-title">Welcome!</h2>
+      <p class="about-desc">Inspired by my Grandma and her friends, this catalog preserves their secret food exchange society. Every week they create delicious cultural meals and deliver them to each other's houses.</p>
+      <div class="about-actions">
+        <a href="#newsletter" class="btn-outline">Newsletter</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 12 healthy recipes section -->
+  <section class="banner-section">
+    <img src="https://images.unsplash.com/photo-1771339140250-7450e666818e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080" class="banner-bg" />
+    <div class="banner-card">
+      <h2 class="banner-title">12 Healthy Cultural Recipes</h2>
+      <a href="healthy.html" class="btn-dark">Check it Out</a>
+    </div>
+  </section>
+  <!-- first catalog, latest from the food exchange -->
+  <div id="recipes" class="recipe-catalog">
+    <section class="recipe-group">
+      <div class="group-header">
+        <h2 class="group-title">Latest From the Exchange</h2>
+        <button class="view-more-btn" data-filter="All">View More</button>
+      </div>
+      <div id="grid-latest" class="recipe-grid"></div>
+    </section>
+    <!-- second catalog, viet dishes-->
+    <section class="recipe-group">
+      <div class="group-header">
+        <h2 class="group-title">Grandma Tuyet's Favorite Vietnamese Dishes</h2>
+        <button class="view-more-btn" data-filter="Vietnamese">View More</button>
+      </div>
+      <div id="grid-vietnamese" class="recipe-grid"></div>
+    </section>
+    <!-- third catalog, cultural dishes -->
+    <section class="recipe-group">
+      <div class="group-header">
+        <h2 class="group-title">Delicious Cultural Dishes</h2>
+        <button class="view-more-btn" data-filter="Mexico">View More</button>
+      </div>
+      <div id="grid-cultural" class="recipe-grid"></div>
+    </section>
+  </div>
+
+  <!-- second webpage, 21 spring dishes -->
+  <section class="season-section">
+    <div class="season-img-wrapper">
+      <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"/></div>
+    <div class="season-content">
+      <h2 class="season-title">21 Favorite Grandmas’ Recipes To Celebrate The Best Season</h2>
+      <p class="season-desc">When the produce is perfect, the flavors are bright, and the recipes are simple.</p>
+      <a href="spring.html" class="btn-light">Spring it on!</a>
+    </div>
+  </section>
+<!-- cookbook button -->
+  <section id="cookbook" class="cookbook-section">
+    <div class="cookbook-img-wrapper">
+      <div class="cookbook-book"><img src="https://images.unsplash.com/photo-1738257128896-798d49341beb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080" alt="The Society Cookbook" /></div>
+    </div>
+    <div class="cookbook-content">
+      <h2 class="cookbook-title">We Wrote a Cookbook!</h2>
+      <p class="cookbook-desc">Unlock decades of secrets. We've compiled 100 of the society's most guarded cultural recipes into a beautifully bound edition.</p>
+      <button onclick="alert('Cookbook coming soon!')" class="btn-dark-large">Buy Yours Today</button>
+    </div>
+  </section>
+<!-- reviews section -->
+  <section class="testimonial-section">
+    <div class="gradient-left"></div>
+    <div class="gradient-right"></div>
+    <div class="marquee-wrapper">
+      <div class="marquee-content animate-marquee">
+        <div class="quote-item"><p>This Ragu recipe tastes exactly like<br>the one my grandmother used to make.</p><span>"</span></div>
+        <div class="quote-item"><p>I made the skillet chicken for my family<br>and they were begging for seconds.</p><span>"</span></div>
+        <div class="quote-item"><p>Grandma Tuyet's instructions were perfect.<br>Best soup I've ever made.</p><span>"</span></div>
+        <div class="quote-item"><p>A beautiful way to preserve family history.<br>The recipes are flawless.</p><span>"</span></div>
+      </div>
+      <div class="marquee-content animate-marquee" aria-hidden="true">
+        <div class="quote-item"><p>This Ragu recipe tastes exactly like<br>the one my grandmother used to make.</p><span>"</span></div>
+        <div class="quote-item"><p>I made the skillet chicken for my family<br>and they were begging for seconds.</p><span>"</span></div>
+        <div class="quote-item"><p>Grandma Tuyet's instructions were perfect.<br>Best soup I've ever made.</p><span>"</span></div>
+        <div class="quote-item"><p>A beautiful way to preserve family history.<br>The recipes are flawless.</p><span>"</span></div>
+      </div>
+    </div>
+  </section>
+<!-- quicklinks for the bottom tabs -->
+  <section class="quick-links-section">
+    <div class="quick-links-grid">
+      <button class="quick-link group" data-category="Chicken">
+        <span>Chicken Dinners</span>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+      </button>
+      <button class="quick-link group" data-category="Breakfast">
+        <span>Breakfast Ideas</span>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+      </button>
+      <button class="quick-link group" data-category="Dessert">
+        <span>Desserts</span>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+      </button>
+      <button class="quick-link group" data-category="Healthy">
+        <span>Healthy Recipes</span>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+      </button>
+    </div>
+  </section>
+<!-- newsletter -->
+  <section id="newsletter" class="newsletter-section">
+    <div class="newsletter-content">
+      <h2 class="newsletter-title">Our Recipes, Your Inbox</h2>
+      <p class="newsletter-desc">Subscribe for weekly recipe inspiration from the society.</p>
+      <form id="newsletter-form" class="newsletter-form">
+        <input type="email" placeholder="Enter your email address" required />
+        <button type="submit" class="btn-primary">Subscribe</button>
+      </form>
+    </div>
+  </section>
+<!-- footer, socials, logo, etc.-->
+  <footer class="footer">
+    <div class="footer-logo">Society</div>
+    <div class="footer-links">
+      <a href="#recipes">Recipes</a>
+      <a href="#about">About</a>
+      <a href="#">Privacy Policy</a>
+    </div>
+    <div class="footer-socials">
+      <a href="#" class="social-icon"><img src="https://img.freepik.com/premium-vector/business-icons-business-ecommerce-finance-accounting-big-set-icons-collection-vector-illustrat_1059745-252.jpg" alt="Instagram" style="transform: scale(1.35);"></a>
+      <a href="#" class="social-icon"><img src="https://thumbs.dreamstime.com/b/print-204672040.jpg" alt="Facebook"></a>
+      <a href="#" class="social-icon"><img src="https://www.logo.wine/a/logo/Snapchat/Snapchat-Ghost-Outlined-Logo.wine.svg" alt="Snapchat" style="transform: scale(1.2);"></a>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Society Food Exchange. All rights reserved.</p>
+      <div class="footer-endorsed">
+        <span>Endorsed by Snapchat</span>
+        <img src="https://www.logo.wine/a/logo/Snapchat/Snapchat-Logo.wine.svg" alt="Snapchat">
+      </div>
+    </div>
+  </footer>
+<!-- search menu dropdown filters and entire database catalog -->
+  <div id="search-modal" class="modal-overlay hidden">
+    <div class="search-container">
+      
+      <div class="search-header">
+        <h2>Search the Vault</h2>
+        <button id="close-search-btn" class="close-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+      
+      <div class="search-input-wrapper">
+        <svg xmlns="http://www.w3.org/2000/svg" class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" id="search-input" placeholder="Search for ingredients, grandmas, or dishes..." autocomplete="off">
+      </div>
+
+      <div class="filter-grid" id="advanced-filters">
+        <div class="filter-group">
+          <label>Culture</label>
+          <div class="select-wrapper">
+            <select id="filter-cuisine">
+              <option value="All">All Cultures</option>
+              <option value="Vietnamese">Vietnamese</option>
+              <option value="Mexico">Mexico</option>
+              <option value="Italian">Italian</option>
+              <option value="French">French</option>
+              <option value="American">American</option>
+              <option value="Japanese">Japanese</option>
+              <option value="Spain">Spain</option>
+              <option value="South Korea">South Korea</option>
+              <option value="China">China</option>
+              <option value="India">India</option>
+              <option value="Thailand">Thailand</option>
+            </select>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </div>
+        </div>
+        <div class="filter-group">
+          <label>Course</label>
+          <div class="select-wrapper">
+            <select id="filter-course">
+              <option value="All">Any Course</option>
+              <option value="Breakfast">Breakfast</option>
+              <option value="Lunch">Lunch</option>
+              <option value="Dinner">Dinner</option>
+              <option value="Snacks">Snacks</option>
+              <option value="Desserts">Desserts</option>
+              <option value="Healthy / Light">Healthy / Light</option>
+            </select>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </div>
+        </div>
+        <div class="filter-group">
+          <label>Convenience</label>
+          <div class="select-wrapper">
+            <select id="filter-time">
+              <option value="All">Any Time</option>
+              <option value="under30">Quick (Under 30 Mins)</option>
+              <option value="under60">Medium (Under 1 Hour)</option>
+              <option value="over60">Slow Cooked (1+ Hours)</option>
+            </select>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </div>
+        </div>
+        <div class="filter-group">
+          <label>Dietary</label>
+          <div class="select-wrapper">
+            <select id="filter-diet">
+              <option value="All">No Restrictions</option>
+              <option value="vegetarian">Vegetarian Friendly</option>
+              <option value="dairy-free">Dairy-Free</option>
+            </select>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </div>
+        </div>
+      </div>
+
+      <div id="search-results" class="recipe-grid pb-20"></div>
+    </div>
+  </div>
+<!-- card model -->
+  <div id="recipe-modal" class="modal-overlay dark hidden">
+    <div class="recipe-modal-content">
+      <button id="close-recipe-btn" class="close-modal-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+      
+      <div class="recipe-modal-img"><img id="modal-img" src="" /></div>
+
+      <div class="recipe-modal-details">
+        <div class="recipe-modal-body">
+          <span id="modal-cuisine" class="badge">Cuisine</span>
+          <h2 id="modal-title" class="recipe-modal-title">Recipe Title</h2>
+          
+          <div class="recipe-meta">
+            <span>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              <span id="modal-time">Time</span>
+            </span>
+            <span>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+              <span id="modal-author">Grandma</span>
+            </span>
+          </div>
+
+          <p id="modal-desc" class="recipe-desc">Description goes here...</p>
+          <h3 class="recipe-section-title">Ingredients</h3>
+          <ul id="modal-ingredients" class="recipe-list"></ul>
+          <h3 class="recipe-section-title">Instructions</h3>
+          <ol id="modal-instructions" class="recipe-list ordered"></ol>
+        </div>
+        <!-- save tool -->
+        <div class="recipe-modal-footer">
+          <button onclick="alert('Recipe Saved to your Cookbook!')" class="btn-dark-large w-full">Save to Cookbook</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="scripts.js"></script>
+  </body>
+</html>
